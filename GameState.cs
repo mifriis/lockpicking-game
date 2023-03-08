@@ -1,3 +1,5 @@
+using System;
+
 namespace LockpickingGame;
 
 public class GameState

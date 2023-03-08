@@ -1,0 +1,178 @@
+body {
+  margin: 0px;
+}
+
+h1, h2, h3, h4 {
+  color: #5c494d;
+}
+
+#lock-header {
+  min-height: 10vh;
+  background-color: #5c494d;
+}
+#lock-header > h1 {
+  font-size: 7vh;
+  margin: 0rem;
+  padding: 1vh;
+  color: rgba(178, 217, 190, 1);
+}
+
+#scoreboard {
+  min-width: 5rem;
+  z-index: 6;
+  opacity: 0;
+  position: absolute;
+  right: 3rem;
+  font-size: 6rem;
+  color: #5c494d;
+}
+#scoreboard:before {
+  content: 'moves ';
+  font-size: 0.5em;
+  color: #666;
+}
+
+#gameBoard {
+  min-height: 90vh;
+  display: flex;
+  background: rgba(178, 217, 190, 0.3);
+  position: relative;
+}
+
+.column {
+  opacity: 0;
+  flex: 1;
+  z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  cursor: pointer;
+}
+
+.column:before {
+  content: '';
+  width: 1.5rem;
+  background: #7a7162;
+  height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-right-radius: .6rem;
+  border-top-left-radius: .6rem;
+}
+
+.column:not(.selected):hover {
+  background: rgba(178, 217, 190, 0.5);
+}
+.column.selected {
+  background: rgba(178, 217, 190, 0.8);
+}
+
+.disc {
+  height: 3rem;
+  background: #555;
+  border-radius: .4rem;
+  width: 30%;
+  position: absolute;
+  bottom: 0rem;
+  margin: auto;
+  transition: 1s;
+}
+
+.disc:nth-last-of-type(1) {bottom: 0.1rem;}
+.disc:nth-last-of-type(2) {bottom: 3.2rem;}
+.disc:nth-last-of-type(3) {bottom: 6.3rem;}
+.disc:nth-last-of-type(4) {bottom: 9.4rem;}
+.disc:nth-last-of-type(5) {bottom: 12.5rem;}
+
+.disc.layer1 {
+  width: 9rem;
+  left: calc(50% - 4.5rem);
+  background: #B1989D;
+}
+.disc.layer2 {
+  width: 13rem;
+  left: calc(50% - 6.5rem);
+  background: #876F74;
+}
+.disc.layer3 {
+  width: 17rem;
+  left: calc(50% - 8.5rem);
+  background: #5C494D;
+}
+.disc.layer4 {
+  width: 21rem;
+  left: calc(50% - 10.5rem);
+  background: #352427;
+}
+.disc.layer5 {
+  width: 25rem;
+  left: calc(50% - 12.5rem);
+  background: #35171E;
+}
+
+.column.selected > .disc:first-of-type {
+  top: -10rem;
+}
+
+.button-row {
+  display: flex;
+  margin: 5rem auto 0rem auto;
+  width: 80%;
+
+}
+
+button {
+  flex: 1;
+  cursor: pointer;
+  margin: 0rem 2rem;
+  background-color: transparent;
+  font-size: 2.5rem;
+  border: solid .1rem #5c494d;
+  border-radius: .6rem;
+  padding: 2rem 1rem;
+  color: #5c494d;
+}
+
+button:hover {
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.22);
+}
+
+#win {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  left: 0rem;
+  top: 0rem;
+  font-size: 2em;
+  opacity: 0;
+  width: 100%;
+  min-height: 80vh;
+}
+
+
+@media only screen and (max-width : 768px) {
+  html {
+    font-size: 5px;
+  }
+  .button-row {
+    flex-direction: column;
+  }
+  .button-row > button {
+    font-size: 5rem;
+    border-width: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  #options h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  #lock-header > h1 {
+    text-align: center;
+    font-size: 7rem;
+    margin: 0rem;
+    padding: 12rem 5rem 0rem 5rem;
+  }
+}

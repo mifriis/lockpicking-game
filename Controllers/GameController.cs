@@ -1,4 +1,6 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace LockpickingGame.Controllers;
 
@@ -21,4 +23,6 @@ public class GameController : ControllerBase
             Date = DateTime.Now
         };
     }
+    
+    //POST GameState and Save in memory
 }
